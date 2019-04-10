@@ -1,24 +1,36 @@
-/* pages/test/test.wxss */
-/* view */
-.view-parent-container{
-    width: 300rpx;
-    height: 300rpx;
-    background: yellowgreen;
+.button
+{
+  margin: 20rpx;
 }
-
-.hover-parent-container{
-    background: white; 
+.scroll-x {
+  display: flex;
+  flex-direction: row; 
 }
-
-.view-container{
-    width: 200rpx;
-    height: 200rpx;
-    background: chocolate;
-    color: white;
-    text-align: center;
-    line-height: 200rpx;
+.scroll-y {
+  display: flex;
+  flex-direction: column; 
 }
-
-.hover-container{
-     background: black;
+.green
+{
+  display: flex;
+  align-items: center;
+  width: 400rpx;
+  height: 400rpx;
+  background: green;
+}
+.red
+{
+  display: flex;
+  align-items: center;
+  width: 400rpx;
+  height: 400rpx;
+  background: red;
+}
+.yellow
+{
+  display: flex;
+  align-items: center;
+  width: 400rpx;
+  height: 400rpx;
+  background: yellow;
 }

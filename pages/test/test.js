@@ -1,86 +1,55 @@
-// pages/test/test.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    toView: 'yellow',
+    scrollLeft: 0,
+    //滚动的数组
+    scrolls: [
+      {
+        name: '黄色',
+        tag: 'yellow', 
+      },
+      {
+        name: '绿色',
+        tag: 'green',
+      },
+      {
+        name: '红色',
+        tag: 'red',
+      },
+      {
+        name: '黄色',
+        tag: 'yellow',
+      },
+      {
+        name: '绿色',
+        tag: 'green',
+      },
+      {
+        name: '红色',
+        tag: 'red',
+      },
+    ],
+  
   },
-
-  getData: function () {
-      console.log("into func");
-      wx.request({
-        url: '127.0.0.1:3000/handleData',//接口地址
-        data: {//请求数据
-          username: "ZHIYU XU",
-          email: "xuzhiyde@gmail.com"
-        },
-        success: function (res) {//收到开发者服务成功返回的回调函数
-          console.log("complete")
-        },
-        fail: function () {//接口调用失败的回调函数
-          console.log("fail")
-        },
-        complete: function () {//接口调用结束的回调函数（调用成功、失败都会执行）
-          console.log("complete")
-        }
-      })
+  scrollToRed:function(e)
+  {
+    this.setData({
+      toView: 'green'
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  scrollTo100: function (e) {
+    this.setData({
+      scrollLeft: 100
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  
+  upper: function (e) {
+    console.log('滚动到顶部')
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  lower: function (e) {
+    console.log('滚动到底部')
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  scroll: function (e) {
+    console.log(e)
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })
