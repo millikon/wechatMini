@@ -1,1 +1,24 @@
 /* pages/test/test.wxss */
+/* view */
+.view-parent-container{
+    width: 300rpx;
+    height: 300rpx;
+    background: yellowgreen;
+}
+
+.hover-parent-container{
+    background: white; 
+}
+
+.view-container{
+    width: 200rpx;
+    height: 200rpx;
+    background: chocolate;
+    color: white;
+    text-align: center;
+    line-height: 200rpx;
+}
+
+.hover-container{
+     background: black;
+}
