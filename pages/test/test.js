@@ -1,55 +1,33 @@
 Page({
   data: {
-    toView: 'yellow',
-    scrollLeft: 0,
-    //滚动的数组
-    scrolls: [
-      {
-        name: '黄色',
-        tag: 'yellow', 
-      },
-      {
-        name: '绿色',
-        tag: 'green',
-      },
-      {
-        name: '红色',
-        tag: 'red',
-      },
-      {
-        name: '黄色',
-        tag: 'yellow',
-      },
-      {
-        name: '绿色',
-        tag: 'green',
-      },
-      {
-        name: '红色',
-        tag: 'red',
-      },
+    imgUrls: [
+      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
+      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
+      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
     ],
-  
+    indicatorDots: false,
+    autoplay: false,
+    interval: 5000,
+    duration: 1000
   },
-  scrollToRed:function(e)
-  {
+  changeIndicatorDots(e) {
     this.setData({
-      toView: 'green'
+      indicatorDots: !this.data.indicatorDots
     })
   },
-  scrollTo100: function (e) {
+  changeAutoplay(e) {
     this.setData({
-      scrollLeft: 100
+      autoplay: !this.data.autoplay
     })
   },
-  
-  upper: function (e) {
-    console.log('滚动到顶部')
+  intervalChange(e) {
+    this.setData({
+      interval: e.detail.value
+    })
   },
-  lower: function (e) {
-    console.log('滚动到底部')
-  },
-  scroll: function (e) {
-    console.log(e)
-  },
+  durationChange(e) {
+    this.setData({
+      duration: e.detail.value
+    })
+  }
 })

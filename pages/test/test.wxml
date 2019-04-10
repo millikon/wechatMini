@@ -1,27 +1,22 @@
 <!--pages/test/test.wxml-->
-<view>scroll-view 横向</view>
-
-<button class='button' type='primary' size='mini' bindtap='scrollToRed'>点我滚动到绿色</button>
-
-<button class='button' type='primary' size='mini' bindtap='scrollTo100'>点我滚动100rpx距离</button>
-
-<scroll-view scroll-x="true" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-left="{{scrollTop}}">
-  <view class="scroll-x">
-    <view wx:for-items="{{scrolls}}" wx:key="name">
-      <view id="{{item.tag}}" class="{{item.tag}}">{{item.name}}</view>
-    </view>
-  </view>
-</scroll-view>
 
 
 
+<swiper
+  indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}"
+  interval="{{interval}}"
+  duration="{{duration}}"
+>
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150" />
+    </swiper-item>
+  </block>
+</swiper>
 
-<view>scroll-view 纵向</view>
 
-<scroll-view scroll-y="true" style="height: 500rpx;">
-  <view class="scroll-y" >
-    <view wx:for-items="{{scrolls}}" wx:key="name">
-      <view class="{{item.tag}}">{{item.name}}</view>
-    </view>
-  </view>
-</scroll-view>
+<button bindtap="changeIndicatorDots">indicator-dots</button>
+<button bindtap="changeAutoplay">autoplay</button>
+<slider bindchange="intervalChange" show-value min="500" max="2000" />
+<slider bindchange="durationChange" show-value min="1000" max="10000" />
