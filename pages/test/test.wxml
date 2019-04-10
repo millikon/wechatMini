@@ -1,0 +1,13 @@
+<!--pages/test/test.wxml-->
+<view class='section'>
+  <view>view component</view>
+  <view class='view-parent-container' hover-class='hover-parent-container'>
+    <view
+      class='view-container'
+      hover-class='hover-container'
+      hover-stop-propagation='true'
+      hover-stay-time='300'
+      hover-start-time='500'
+    ></view>
+  </view>
+</view>
